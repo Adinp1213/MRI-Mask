@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumour Detection</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;/* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+            background-size: cover;
+            background-color: #004855;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+            color: #007bff;
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        #upload-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #monitoring-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        .image-container {
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% if messages %}
+        <div style="background-color: #d4edda; border-color: #c3e6cb; color: #155724; padding: 15px; margin-bottom: 20px;">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="description">
+            <h3>Brain Tumour and Skin Lesions Mask Generation</h3>
+        </div>
+
+        <div class="image-container">
+            <a id="upload-btn" class="btn button" href="/brain_tumour">
+                Brain Tumour Detection
+            </a>
+            <br>
+            <a id="upload-btn" class="btn button" href="/skin_lease">
+                Skin Leases Detection
+            </a>
+            <img src="https://source.unsplash.com/1660x900/?laboratory" alt="Surveillance Image" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

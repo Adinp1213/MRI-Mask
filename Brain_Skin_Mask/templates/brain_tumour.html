@@ -1,0 +1,78 @@
+
+{% extends 'base.html' %}
+
+{% block title %}New Detection{% endblock %}
+{% block content %}
+    <style>
+        .container {
+            position: relative; /* Set container as a relative positioning context */
+            height: 75vh; /* Full viewport height */
+            margin-top: 50px;
+            background-image: url('/media/brain_bg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute; /* Position form absolutely within the container */
+            top: 50%; /* Align form vertically centered */
+            left: 50%; /* Align form horizontally centered */
+            transform: translate(-50%, -50%); /* Center the form exactly */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.493);
+            width: 50%;
+            max-width: 500px; /* Limit form width */
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #f5f4f4;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="container">
+        <div class="overlay">
+            <h2>Brain Tumour Detection</h2>
+            <form method="post" action="/brain_tumour/" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- detection image -->
+                <label for="brain_image">Image:</label>
+                <input type="file" id="brain_image" name="brain_image" accept="image/*" required>
+                <!-- Submit Button -->
+                <button type="submit">Detect</button>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}
