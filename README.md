@@ -5,7 +5,7 @@ https://drive.google.com/drive/folders/1I-R5vB8AQag5ziYO9nPeGt1nJ8OAQOXD?usp=dri
 and store it in BrainTumor_SkinLesions_project/Brain_Skin_Mask/home/
 
 You will need xampp for local database 
-RUn this command in a terminal 
+Run this command in a terminal 
 ```
 python manage.py runserver
 ```
