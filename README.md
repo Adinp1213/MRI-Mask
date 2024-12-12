@@ -7,10 +7,6 @@
 </p>
 
 
-<p style="align: center;">
- <img src="https://github.com/user-attachments/assets/9378e690-3e83-4930-b504-a4b1d648b967" alt="MRI_Mask" width="100%">
-</p>
-
 
 ## MRI-Mask Architecture
 
